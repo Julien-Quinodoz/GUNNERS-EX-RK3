@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PW14.c                                             :+:      :+:    :+:   */
+/*   PW7.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jquinodo <jquinodo@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 12:58:10 by jquinodo          #+#    #+#             */
-/*   Updated: 2025/03/13 18:10:20 by jquinodo         ###   ########.fr       */
+/*   Updated: 2025/03/13 20:57:16 by jquinodo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+
+// !!!! BUG A FIXER : a.out 0 -2 2 -5 5  : fonctionne ! mais a.out 0 2 -2 5 -5 BUG !
 
 void powerset(int target,int *arr,int len, int pos, int sum, int *used, int to_print)
 {
