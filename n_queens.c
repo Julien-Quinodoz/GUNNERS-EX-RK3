@@ -1,4 +1,16 @@
-
+/*
+Board	Total Solutions | wc -l
+nb 1 --> 1
+nb 2 --> 0
+nb 3 --> 0
+nb 4 --> 2
+nb 5 --> 10
+nb 6 --> 4
+nb 7 --> 40
+nb 8 --> 92
+nb 9 --> 352
+nb 10 --> 724
+*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -56,15 +68,17 @@ int main(int ac, char **av)
 	int n;
 	int *board;
 
-	n = atoi(av[1]);
-	board = malloc(sizeof(int) * n);
-
 	if (ac != 2)
 		return 1;
+	n = atoi(av[1]);
 	if (n < 1)
+		return 1;
+	board = malloc(sizeof(int) * n);
+	if(!board)
 		return 1;
 
 	solve_NQ(board, 0, n);
+
 	free(board);
 	return 0;
 }

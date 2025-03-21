@@ -48,7 +48,12 @@ void init_data(t_data *data, char *str)
 	data->len 	= ft_len(str);
 	data->curr	= malloc(sizeof(char) * data->len + 1);
 	data->used 	= calloc(data->len, sizeof(int));
-
+	if(!data->curr || !data->used)
+	{
+		free(data->curr);
+		free(data->used);
+		return;
+	}
 	data->curr[data->len] = '\0';
 }
 
@@ -75,13 +80,15 @@ void permutation(t_data *data, int pos)
 
 int main(int ac, char **av)
 {
-	t_data	data;
-
 	if(ac != 2)
 		return 1;
+
+	t_data	data;
+
 	sort_liste(av[1]);
 	init_data(&data, av[1]);
 	permutation(&data, 0);
+
 	free(data.curr);
 	free(data.used);
 	return 0;

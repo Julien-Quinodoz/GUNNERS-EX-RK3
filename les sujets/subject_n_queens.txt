@@ -2,7 +2,7 @@ Assignement name : n_queens
 
 Expected files : *.c *.h
 
-Allowed functions : atoi, fprintf, write
+Allowed functions : atoi, printf, write, calloc, malloc
 
 -------------------------------------------------------------------------
 
